@@ -131,6 +131,22 @@
         "alice.chen"
       ],
       "status": "confirmed"
+    },
+    {
+      "id": "7274f875-1462-45c3-af7f-dab8afbf5f25",
+      "calendar_id": "drama-society-studio-main",
+      "calendar_name": "Main Drama Studio",
+      "title": "Event",
+      "start_time": "2025-07-21T10:00:00",
+      "end_time": "2025-07-21T12:00:00",
+      "organizer": "Alice Chen",
+      "location": "Arts Block, Floor 1",
+      "description": "",
+      "created_at": "2025-07-15T16:04:34.438575",
+      "attendees": [
+        "Alice Chen"
+      ],
+      "status": "confirmed"
     }
   ]
 }

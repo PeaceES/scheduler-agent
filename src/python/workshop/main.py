@@ -403,38 +403,14 @@ async def schedule_event_with_notification(title: str, start_time: str, end_time
     return result
 
 
-async def schedule_event_with_organizer(room_id: str, title: str, 
-                                     start_time: str, end_time: str, organizer: str, description: str = "") -> str:
-    """Schedule an event without permission checking - just collect organizer info."""
-    try:
-        # Simply proceed with booking - no permission checking
-        result = await schedule_event_via_mcp(
-            title=title,
-            start_time=start_time,
-            end_time=end_time,
-            room_id=room_id,
-            organizer=organizer,
-            description=description
-        )
-        
-        return result
-        
-    except Exception as e:
-        return json.dumps({
-            "success": False,
-            "error": f"Error scheduling event: {str(e)}"
-        })
-
-
-
 # Define functions list after all function definitions
 functions = AsyncFunctionTool([
     # Basic MCP calendar service functions
     get_events_via_mcp,
     check_room_availability_via_mcp,
     get_rooms_via_mcp,
-    # Simple booking function without permission checking
-    schedule_event_with_organizer,
+    # Enhanced booking function with shared thread notifications
+    schedule_event_with_notification,
 ])
 
 
